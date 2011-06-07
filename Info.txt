@@ -1,0 +1,6 @@
+TODO:
+Write out all code, make interfaces, web access, test, basically do everything.
+
+CodePlex project info:
+Name: Microsoft Tag API for BlackBerry
+Site: http://tag.microsoft.com/developer/index.aspx
