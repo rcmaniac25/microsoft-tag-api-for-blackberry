@@ -1,6 +1,39 @@
 TODO:
-Write other todos (don't forget web system)
+Get any functions using Tag to work
+Figure out what permission can cause "invoke" to throw a ControlledAccessException (something in Interactions)
+Test "services"
+Modify implemented components so it is more developer friendly
+Implement more types.
+Create client class
+Test
 
-CodePlex project info:
-Name: Microsoft Tag API for BlackBerry
-Site: http://tag.microsoft.com/developer/index.aspx
+Service generation:
+-Service stub classes are generated with "wscompile -gen -cldc1.1 -d {dest folder} config.xml" where config.xml is:
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+  <wsdl location="https://ws.tag.microsoft.com/MIBPService.wsdl" packageName="mstag.services" />
+</configuration>
+-Then the following classes has "java.io.ObjectStreamException" removed from "readResolve" so it will compile:
+UserAuthFaultReason
+TagStatus
+TagFaultReason
+SenderFaultReason
+SenderFaultReason
+DecorationType
+CategoryStatus
+CategoryFaultReason
+CategoryFaultReason
+-IMIBPContract_Stub should have the following changes made:
+--_type_UTCStartDate's Type is changed from "UNKNOWN" to "Type.STRING"
+--_type_UTCEndDate's Type is changed from "UNKNOWN" to "Type.STRING"
+--_type_GetBarcodeResult's Type is changed from "UNKNOWN" to "Type.STRING"
+-Then go through everything that uses getUTCStartDate and getUTCEndDate and surround the code with a call to "Util.toSOAPString"
+-For _type_GetBarcodeResult, go to the bottom of "getBarcode" (where it is used) and replace "result = (byte[])getBarcodeResultObj;" with:
+try
+{
+	result = Base64InputStream.decode((String)getBarcodeResultObj);
+}
+catch (IOException e)
+{
+	result = null;
+}

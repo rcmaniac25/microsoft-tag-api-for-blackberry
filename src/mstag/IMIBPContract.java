@@ -8,7 +8,7 @@ package mstag;
 
 public interface IMIBPContract
 {
-	public static final int IMG_TYPE_PDF = 0;
+	public static final int IMG_TYPE_PDF = 1;
 	public static final int IMG_TYPE_WMF = IMG_TYPE_PDF + 1;
 	public static final int IMG_TYPE_JPEG = IMG_TYPE_WMF + 1;
 	public static final int IMG_TYPE_PNG = IMG_TYPE_JPEG + 1;
@@ -17,10 +17,10 @@ public interface IMIBPContract
 	public static final int IMG_TYPE_TAG = IMG_TYPE_TIFF + 1;
 	
 	public static final int DECORATION_TYPE_HCCBRP_DECORATION_NONE = 0;
-	public static final int DECORATION_TYPE_HCCBRP_DECORATION_DOWNLOAD = DECORATION_TYPE_HCCBRP_DECORATION_NONE + 1;
-	public static final int DECORATION_TYPE_HCCBENCODEFLAG_STYLIZED = DECORATION_TYPE_HCCBRP_DECORATION_DOWNLOAD + 1;
-	public static final int DECORATION_TYPE_HCCBRP_DECORATION_FRAMEPLAIN = DECORATION_TYPE_HCCBENCODEFLAG_STYLIZED + 1;
-	public static final int DECORATION_TYPE_HCCBRP_DECORATION_TEXT = DECORATION_TYPE_HCCBRP_DECORATION_FRAMEPLAIN + 1;
+	public static final int DECORATION_TYPE_HCCBRP_DECORATION_DOWNLOAD = 3;
+	public static final int DECORATION_TYPE_HCCBENCODEFLAG_STYLIZED = 0x13;
+	public static final int DECORATION_TYPE_HCCBRP_DECORATION_FRAMEPLAIN = 8;
+	public static final int DECORATION_TYPE_HCCBRP_DECORATION_TEXT = 0x20;
 	
 	/**
 	 * Activates a Category that has been paused with the {@link #PauseCategory(UserCredential, String)} method. A Category that has been paused is not available until it has been activated.
