@@ -37,3 +37,4 @@ catch (IOException e)
 {
 	result = null;
 }
+-Remove all "function classes", for example for CreateTag there are 2 classes, CreateTag and CreateTagResponse. Both are unnecessary.
