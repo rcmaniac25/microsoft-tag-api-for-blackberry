@@ -5,12 +5,12 @@
 package mstag.services;
 
 
-public class CategoryFault extends Exception {
+public class UserAuthFault_Exception extends Exception {
     private java.lang.String errorMessage;
-    private mstag.services.CategoryFaultReason reason;
+    private mstag.services.UserAuthFaultReason reason;
     
     
-    public CategoryFault(java.lang.String errorMessage, mstag.services.CategoryFaultReason reason) {
+    public UserAuthFault_Exception(java.lang.String errorMessage, mstag.services.UserAuthFaultReason reason) {
         super(errorMessage);
         this.errorMessage = errorMessage;
         this.reason = reason;
@@ -20,7 +20,7 @@ public class CategoryFault extends Exception {
         return errorMessage;
     }
     
-    public mstag.services.CategoryFaultReason getReason() {
+    public mstag.services.UserAuthFaultReason getReason() {
         return reason;
     }
 }

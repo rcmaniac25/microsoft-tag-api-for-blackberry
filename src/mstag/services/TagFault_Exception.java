@@ -5,12 +5,12 @@
 package mstag.services;
 
 
-public class SenderFault extends Exception {
+public class TagFault_Exception extends Exception {
     private java.lang.String errorMessage;
-    private mstag.services.SenderFaultReason reason;
+    private mstag.services.TagFaultReason reason;
     
     
-    public SenderFault(java.lang.String errorMessage, mstag.services.SenderFaultReason reason) {
+    public TagFault_Exception(java.lang.String errorMessage, mstag.services.TagFaultReason reason) {
         super(errorMessage);
         this.errorMessage = errorMessage;
         this.reason = reason;
@@ -20,7 +20,7 @@ public class SenderFault extends Exception {
         return errorMessage;
     }
     
-    public mstag.services.SenderFaultReason getReason() {
+    public mstag.services.TagFaultReason getReason() {
         return reason;
     }
 }

@@ -1,6 +1,5 @@
 TODO:
 Get any functions using Tag to work
-Figure out what permission can cause "invoke" to throw a ControlledAccessException (something in Interactions)
 Test "services"
 Modify implemented components so it is more developer friendly
 Implement more types.
@@ -8,7 +7,7 @@ Create client class
 Test
 
 Service generation:
--Service stub classes are generated with "wscompile -gen -cldc1.1 -d {dest folder} config.xml" where config.xml is:
+-Service stub classes are generated with "wscompile -gen -cldc1.1 -f:searchschema -d {dest folder} config.xml" where config.xml is:
 <?xml version="1.0" encoding="utf-8"?>
 <configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
   <wsdl location="https://ws.tag.microsoft.com/MIBPService.wsdl" packageName="mstag.services" />

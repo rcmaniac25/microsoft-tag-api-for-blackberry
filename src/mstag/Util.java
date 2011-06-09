@@ -22,11 +22,26 @@ public class Util
 			return null;
 		}
 		StringBuffer buf = new StringBuffer();
+		
 		//Get format
 		new SimpleDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS").format(cal, buf, null);
 		buf.append("0000");
+		
 		//Timezone
-		//TODO
+		String zoneID = cal.getTimeZone().getID();
+		int index = zoneID.indexOf('-');
+		if(index == -1)
+		{
+			index = zoneID.indexOf('+');
+			if(index == -1)
+			{
+				buf.append("+00:00");
+			}
+		}
+		if(index != -1)
+		{
+			buf.append(zoneID.substring(index + 1));
+		}
 		return buf.toString();
 	}
 }

@@ -73,7 +73,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 	//  Begin user methods
 	// 
 
-	public java.lang.Boolean createCategory(mstag.services.UserCredential userCredential, mstag.services.Category category) throws java.rmi.RemoteException, mstag.services.CategoryFault, mstag.services.SenderFault, mstag.services.UserAuthFault, mstag.services.ReceiverFault {
+	public java.lang.Boolean createCategory(mstag.services.UserCredential userCredential, mstag.services.Category category) throws java.rmi.RemoteException, mstag.services.ReceiverFault_Exception, mstag.services.UserAuthFault_Exception, mstag.services.CategoryFault_Exception, mstag.services.SenderFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[2];
 		Object[] userCredentialObject;
@@ -109,57 +109,57 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param;
+					mstag.services.ReceiverFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param, reason_param);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param2;
+					mstag.services.UserAuthFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param3;
+					mstag.services.CategoryFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param4;
+					mstag.services.SenderFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param4, reason_param4);
 				}
 			}
 			throw e;
@@ -172,7 +172,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean updateCategory(mstag.services.UserCredential userCredential, java.lang.String existingCategoryName, mstag.services.Category category) throws java.rmi.RemoteException, mstag.services.UserAuthFault, mstag.services.SenderFault, mstag.services.CategoryFault, mstag.services.ReceiverFault {
+	public java.lang.Boolean updateCategory(mstag.services.UserCredential userCredential, java.lang.String existingCategoryName, mstag.services.Category category) throws java.rmi.RemoteException, mstag.services.UserAuthFault_Exception, mstag.services.ReceiverFault_Exception, mstag.services.SenderFault_Exception, mstag.services.CategoryFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[3];
 		Object[] userCredentialObject;
@@ -220,46 +220,46 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param, reason_param);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param2;
+					mstag.services.ReceiverFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param3;
+					mstag.services.SenderFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param4;
+					mstag.services.CategoryFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param4, reason_param4);
 				}
 			}
 			throw e;
@@ -272,7 +272,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean activateCategory(mstag.services.UserCredential userCredential, java.lang.String categoryName) throws java.rmi.RemoteException, mstag.services.ReceiverFault, mstag.services.SenderFault, mstag.services.UserAuthFault, mstag.services.CategoryFault {
+	public java.lang.Boolean activateCategory(mstag.services.UserCredential userCredential, java.lang.String categoryName) throws java.rmi.RemoteException, mstag.services.CategoryFault_Exception, mstag.services.UserAuthFault_Exception, mstag.services.ReceiverFault_Exception, mstag.services.SenderFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[2];
 		Object[] userCredentialObject;
@@ -298,57 +298,57 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param;
+					mstag.services.CategoryFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param, reason_param);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param2;
+					mstag.services.UserAuthFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param3;
+					mstag.services.ReceiverFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param4;
+					mstag.services.SenderFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param4, reason_param4);
 				}
 			}
 			throw e;
@@ -361,7 +361,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean pauseCategory(mstag.services.UserCredential userCredential, java.lang.String categoryName) throws java.rmi.RemoteException, mstag.services.CategoryFault, mstag.services.SenderFault, mstag.services.UserAuthFault, mstag.services.ReceiverFault {
+	public java.lang.Boolean pauseCategory(mstag.services.UserCredential userCredential, java.lang.String categoryName) throws java.rmi.RemoteException, mstag.services.ReceiverFault_Exception, mstag.services.UserAuthFault_Exception, mstag.services.CategoryFault_Exception, mstag.services.SenderFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[2];
 		Object[] userCredentialObject;
@@ -387,57 +387,57 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param;
+					mstag.services.ReceiverFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param, reason_param);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param2;
+					mstag.services.UserAuthFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param3;
+					mstag.services.CategoryFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param4;
+					mstag.services.SenderFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param4, reason_param4);
 				}
 			}
 			throw e;
@@ -450,7 +450,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean createTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, mstag.services.Tag tag) throws java.rmi.RemoteException, mstag.services.SenderFault, mstag.services.TagFault, mstag.services.CategoryFault, mstag.services.UserAuthFault, mstag.services.ReceiverFault {
+	public java.lang.Boolean createTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, mstag.services.Tag tag) throws java.rmi.RemoteException, mstag.services.ReceiverFault_Exception, mstag.services.UserAuthFault_Exception, mstag.services.CategoryFault_Exception, mstag.services.TagFault_Exception, mstag.services.SenderFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[3];
 		Object[] userCredentialObject;
@@ -490,31 +490,31 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param;
+					mstag.services.ReceiverFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param, reason_param);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.TagFaultReason reason_param2;
+					mstag.services.UserAuthFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String tagFaultReason;
-						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.TagFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param2, reason_param2);
 				}
 				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
@@ -527,33 +527,33 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param3 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param4;
+					mstag.services.TagFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String tagFaultReason;
+						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.TagFault_Exception(errorMessage_param4, reason_param4);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param5;
 					errorMessage_param5 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param5;
+					mstag.services.SenderFaultReason reason_param5;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param5 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param5 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param5 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param5, reason_param5);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param5, reason_param5);
 				}
 			}
 			throw e;
@@ -566,7 +566,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean activateTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.SenderFault, mstag.services.TagFault, mstag.services.UserAuthFault, mstag.services.ReceiverFault, mstag.services.CategoryFault {
+	public java.lang.Boolean activateTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.SenderFault_Exception, mstag.services.UserAuthFault_Exception, mstag.services.TagFault_Exception, mstag.services.CategoryFault_Exception, mstag.services.ReceiverFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[3];
 		Object[] userCredentialObject;
@@ -604,59 +604,59 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param, reason_param);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.TagFaultReason reason_param2;
+					mstag.services.UserAuthFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String tagFaultReason;
-						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.TagFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param3;
+					mstag.services.TagFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String tagFaultReason;
+						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.TagFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param4;
+					mstag.services.CategoryFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param4, reason_param4);
 				}
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param5;
 					errorMessage_param5 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param5;
+					mstag.services.ReceiverFaultReason reason_param5;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param5 = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param5 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param5 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param5, reason_param5);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param5, reason_param5);
 				}
 			}
 			throw e;
@@ -669,7 +669,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean pauseTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.CategoryFault, mstag.services.ReceiverFault, mstag.services.SenderFault, mstag.services.TagFault, mstag.services.UserAuthFault {
+	public java.lang.Boolean pauseTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.UserAuthFault_Exception, mstag.services.ReceiverFault_Exception, mstag.services.SenderFault_Exception, mstag.services.TagFault_Exception, mstag.services.CategoryFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[3];
 		Object[] userCredentialObject;
@@ -696,18 +696,18 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param;
+					mstag.services.UserAuthFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param, reason_param);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param, reason_param);
 				}
 				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
@@ -720,7 +720,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param2 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param2, reason_param2);
 				}
 				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
@@ -733,7 +733,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param3 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param3, reason_param3);
 				}
 				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
@@ -746,20 +746,20 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param4 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
 					}
-					throw new mstag.services.TagFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.TagFault_Exception(errorMessage_param4, reason_param4);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param5;
 					errorMessage_param5 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param5;
+					mstag.services.CategoryFaultReason reason_param5;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param5 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param5 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param5 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param5, reason_param5);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param5, reason_param5);
 				}
 			}
 			throw e;
@@ -772,7 +772,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean deleteTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.UserAuthFault, mstag.services.CategoryFault, mstag.services.SenderFault, mstag.services.ReceiverFault, mstag.services.TagFault {
+	public java.lang.Boolean deleteTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.CategoryFault_Exception, mstag.services.SenderFault_Exception, mstag.services.TagFault_Exception, mstag.services.ReceiverFault_Exception, mstag.services.UserAuthFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[3];
 		Object[] userCredentialObject;
@@ -799,44 +799,44 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param;
+					mstag.services.CategoryFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param, reason_param);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param2;
+					mstag.services.SenderFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param3;
+					mstag.services.TagFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String tagFaultReason;
+						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.TagFault_Exception(errorMessage_param3, reason_param3);
 				}
 				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
@@ -849,20 +849,20 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param4 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param4, reason_param4);
 				}
-				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param5;
 					errorMessage_param5 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.TagFaultReason reason_param5;
+					mstag.services.UserAuthFaultReason reason_param5;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param5 = null;
 					} else {
-						java.lang.String tagFaultReason;
-						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param5 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param5 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.TagFault(errorMessage_param5, reason_param5);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param5, reason_param5);
 				}
 			}
 			throw e;
@@ -875,7 +875,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.Boolean updateTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String existingTagName, mstag.services.Tag tag) throws java.rmi.RemoteException, mstag.services.SenderFault, mstag.services.CategoryFault, mstag.services.ReceiverFault, mstag.services.TagFault, mstag.services.UserAuthFault {
+	public java.lang.Boolean updateTag(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String existingTagName, mstag.services.Tag tag) throws java.rmi.RemoteException, mstag.services.UserAuthFault_Exception, mstag.services.CategoryFault_Exception, mstag.services.SenderFault_Exception, mstag.services.ReceiverFault_Exception, mstag.services.TagFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[4];
 		Object[] userCredentialObject;
@@ -916,18 +916,18 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param;
+					mstag.services.UserAuthFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param, reason_param);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param, reason_param);
 				}
 				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
@@ -940,46 +940,46 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param2 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param3;
+					mstag.services.SenderFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.TagFaultReason reason_param4;
+					mstag.services.ReceiverFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String tagFaultReason;
-						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.TagFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param4, reason_param4);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param5;
 					errorMessage_param5 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param5;
+					mstag.services.TagFaultReason reason_param5;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param5 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param5 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String tagFaultReason;
+						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param5 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param5, reason_param5);
+					throw new mstag.services.TagFault_Exception(errorMessage_param5, reason_param5);
 				}
 			}
 			throw e;
@@ -992,7 +992,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public byte[] getBarcode(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName, java.lang.String[] imageType, java.lang.Float sizeInInches, mstag.services.DecorationType decorationsType, java.lang.Boolean isBlackWhite) throws java.rmi.RemoteException, mstag.services.TagFault, mstag.services.ReceiverFault, mstag.services.SenderFault, mstag.services.BarCodeFault, mstag.services.CategoryFault, mstag.services.UserAuthFault {
+	public byte[] getBarcode(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName, java.lang.String[] imageType, java.lang.Float sizeInInches, mstag.services.DecorationType decorationsType, java.lang.Boolean isBlackWhite) throws java.rmi.RemoteException, mstag.services.ReceiverFault_Exception, mstag.services.CategoryFault_Exception, mstag.services.BarCodeFault_Exception, mstag.services.TagFault_Exception, mstag.services.UserAuthFault_Exception, mstag.services.SenderFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[7];
 		Object[] userCredentialObject;
@@ -1023,83 +1023,83 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.TagFaultReason reason_param;
+					mstag.services.ReceiverFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String tagFaultReason;
-						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.TagFaultReason.fromValue(tagFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.TagFault(errorMessage_param, reason_param);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param, reason_param);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
 					errorMessage_param2 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param2;
+					mstag.services.CategoryFaultReason reason_param2;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param2 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param2 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String categoryFaultReason;
+						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param2 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param2, reason_param2);
 				}
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("BarCodeFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
 					errorMessage_param3 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param3;
+					mstag.services.BarCodeFaultReason reason_param3;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param3 = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param3 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String barCodeFaultReason;
+						barCodeFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param3 = mstag.services.BarCodeFaultReason.fromValue(barCodeFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.BarCodeFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("BarCodeFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.BarCodeFaultReason reason_param4;
+					mstag.services.TagFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String barCodeFaultReason;
-						barCodeFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.BarCodeFaultReason.fromValue(barCodeFaultReason);
+						java.lang.String tagFaultReason;
+						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
 					}
-					throw new mstag.services.BarCodeFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.TagFault_Exception(errorMessage_param4, reason_param4);
 				}
-				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param5;
 					errorMessage_param5 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.CategoryFaultReason reason_param5;
+					mstag.services.UserAuthFaultReason reason_param5;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param5 = null;
 					} else {
-						java.lang.String categoryFaultReason;
-						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param5 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
+						java.lang.String userAuthFaultReason;
+						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param5 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param5, reason_param5);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param5, reason_param5);
 				}
-				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param6;
 					errorMessage_param6 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.UserAuthFaultReason reason_param6;
+					mstag.services.SenderFaultReason reason_param6;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param6 = null;
 					} else {
-						java.lang.String userAuthFaultReason;
-						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param6 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param6 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param6, reason_param6);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param6, reason_param6);
 				}
 			}
 			throw e;
@@ -1119,7 +1119,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		return result;
 	}
 
-	public java.lang.String getTagId(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.SenderFault, mstag.services.UserAuthFault, mstag.services.CategoryFault, mstag.services.ReceiverFault, mstag.services.TagFault {
+	public java.lang.String getTagId(mstag.services.UserCredential userCredential, java.lang.String categoryName, java.lang.String tagName) throws java.rmi.RemoteException, mstag.services.ReceiverFault_Exception, mstag.services.UserAuthFault_Exception, mstag.services.CategoryFault_Exception, mstag.services.TagFault_Exception, mstag.services.SenderFault_Exception {
 		// Copy the incoming values into an Object array if needed.
 		Object[] inputObject = new Object[3];
 		Object[] userCredentialObject;
@@ -1146,18 +1146,18 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 			} else if (cause instanceof FaultDetailException) {
 				FaultDetailException fde = (FaultDetailException) cause;
 				QName fdeName = fde.getFaultDetailName();
-				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param;
 					errorMessage_param = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.SenderFaultReason reason_param;
+					mstag.services.ReceiverFaultReason reason_param;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param = null;
 					} else {
-						java.lang.String senderFaultReason;
-						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
+						java.lang.String receiverFaultReason;
+						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
 					}
-					throw new mstag.services.SenderFault(errorMessage_param, reason_param);
+					throw new mstag.services.ReceiverFault_Exception(errorMessage_param, reason_param);
 				}
 				if ("UserAuthFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param2;
@@ -1170,7 +1170,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						userAuthFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param2 = mstag.services.UserAuthFaultReason.fromValue(userAuthFaultReason);
 					}
-					throw new mstag.services.UserAuthFault(errorMessage_param2, reason_param2);
+					throw new mstag.services.UserAuthFault_Exception(errorMessage_param2, reason_param2);
 				}
 				if ("CategoryFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param3;
@@ -1183,33 +1183,33 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 						categoryFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
 						reason_param3 = mstag.services.CategoryFaultReason.fromValue(categoryFaultReason);
 					}
-					throw new mstag.services.CategoryFault(errorMessage_param3, reason_param3);
+					throw new mstag.services.CategoryFault_Exception(errorMessage_param3, reason_param3);
 				}
-				if ("ReceiverFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param4;
 					errorMessage_param4 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.ReceiverFaultReason reason_param4;
+					mstag.services.TagFaultReason reason_param4;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param4 = null;
 					} else {
-						java.lang.String receiverFaultReason;
-						receiverFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param4 = mstag.services.ReceiverFaultReason.fromValue(receiverFaultReason);
+						java.lang.String tagFaultReason;
+						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param4 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
 					}
-					throw new mstag.services.ReceiverFault(errorMessage_param4, reason_param4);
+					throw new mstag.services.TagFault_Exception(errorMessage_param4, reason_param4);
 				}
-				if ("TagFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
+				if ("SenderFaultFault".equals(fdeName.getLocalPart()) && "".equals(fdeName.getNamespaceURI())) {
 					java.lang.String errorMessage_param5;
 					errorMessage_param5 = (java.lang.String)((Object[])fde.getFaultDetail())[0];
-					mstag.services.TagFaultReason reason_param5;
+					mstag.services.SenderFaultReason reason_param5;
 					if (((Object[])fde.getFaultDetail())[1] == null) {
 						reason_param5 = null;
 					} else {
-						java.lang.String tagFaultReason;
-						tagFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
-						reason_param5 = mstag.services.TagFaultReason.fromValue(tagFaultReason);
+						java.lang.String senderFaultReason;
+						senderFaultReason = (java.lang.String)((Object[])fde.getFaultDetail())[1];
+						reason_param5 = mstag.services.SenderFaultReason.fromValue(senderFaultReason);
 					}
-					throw new mstag.services.TagFault(errorMessage_param5, reason_param5);
+					throw new mstag.services.SenderFault_Exception(errorMessage_param5, reason_param5);
 				}
 			}
 			throw e;
@@ -1300,10 +1300,10 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 	protected static final QName _qname_userCredential = new QName("http://www.ws.tag.microsoft.com/ver1", "userCredential");
 	protected static final Element _type_CreateCategory;
 	protected static final Element _type_CreateCategoryResponse;
+	protected static final Element _type_ReceiverFaultFault;
+	protected static final Element _type_UserAuthFaultFault;
 	protected static final Element _type_CategoryFaultFault;
 	protected static final Element _type_SenderFaultFault;
-	protected static final Element _type_UserAuthFaultFault;
-	protected static final Element _type_ReceiverFaultFault;
 	protected static final Element _type_UpdateCategory;
 	protected static final Element _type_UpdateCategoryResponse;
 	protected static final Element _type_ActivateCategory;
@@ -1370,15 +1370,15 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		_type_ErrorMessage = new Element(_qname_ErrorMessage, Type.STRING, 1, 1, true);
 		Element _type_Reason;
 		_type_Reason = new Element(_qname_Reason, Type.STRING);
-		ComplexType _complexType_categoryFault;
-		_complexType_categoryFault = new ComplexType();
-		_complexType_categoryFault.elements = new Element[2];
-		_complexType_categoryFault.elements[0] = _type_ErrorMessage;
-		_complexType_categoryFault.elements[1] = _type_Reason;
-		_type_CategoryFaultFault = new Element(_qname_CategoryFaultFault, _complexType_categoryFault);
-		_type_SenderFaultFault = new Element(_qname_SenderFaultFault, _complexType_categoryFault);
-		_type_UserAuthFaultFault = new Element(_qname_UserAuthFaultFault, _complexType_categoryFault);
-		_type_ReceiverFaultFault = new Element(_qname_ReceiverFaultFault, _complexType_categoryFault);
+		ComplexType _complexType_receiverFault_Exception;
+		_complexType_receiverFault_Exception = new ComplexType();
+		_complexType_receiverFault_Exception.elements = new Element[2];
+		_complexType_receiverFault_Exception.elements[0] = _type_ErrorMessage;
+		_complexType_receiverFault_Exception.elements[1] = _type_Reason;
+		_type_ReceiverFaultFault = new Element(_qname_ReceiverFaultFault, _complexType_receiverFault_Exception);
+		_type_UserAuthFaultFault = new Element(_qname_UserAuthFaultFault, _complexType_receiverFault_Exception);
+		_type_CategoryFaultFault = new Element(_qname_CategoryFaultFault, _complexType_receiverFault_Exception);
+		_type_SenderFaultFault = new Element(_qname_SenderFaultFault, _complexType_receiverFault_Exception);
 		Element _type_existingCategoryName;
 		_type_existingCategoryName = new Element(_qname_existingCategoryName, Type.STRING, 0, 1, true);
 		ComplexType _complexType_updateCategory;
@@ -1454,7 +1454,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		_complexType_createTagResponse.elements = new Element[1];
 		_complexType_createTagResponse.elements[0] = _type_CreateTagResult;
 		_type_CreateTagResponse = new Element(_qname_CreateTagResponse, _complexType_createTagResponse);
-		_type_TagFaultFault = new Element(_qname_TagFaultFault, _complexType_categoryFault);
+		_type_TagFaultFault = new Element(_qname_TagFaultFault, _complexType_receiverFault_Exception);
 		Element _type_tagName;
 		_type_tagName = new Element(_qname_tagName, Type.STRING, 0, 1, true);
 		ComplexType _complexType_activateTag;
@@ -1530,7 +1530,7 @@ public class IMIBPContract_Stub implements mstag.services.IMIBPContract, javax.x
 		_complexType_getBarcodeResponse.elements = new Element[1];
 		_complexType_getBarcodeResponse.elements[0] = _type_GetBarcodeResult;
 		_type_GetBarcodeResponse = new Element(_qname_GetBarcodeResponse, _complexType_getBarcodeResponse);
-		_type_BarCodeFaultFault = new Element(_qname_BarCodeFaultFault, _complexType_categoryFault);
+		_type_BarCodeFaultFault = new Element(_qname_BarCodeFaultFault, _complexType_receiverFault_Exception);
 		_type_GetTagId = new Element(_qname_GetTagId, _complexType_activateTag);
 		Element _type_GetTagIdResult;
 		_type_GetTagIdResult = new Element(_qname_GetTagIdResult, Type.STRING, 0, 1, true);

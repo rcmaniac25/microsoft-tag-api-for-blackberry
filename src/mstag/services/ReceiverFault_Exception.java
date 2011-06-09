@@ -5,12 +5,12 @@
 package mstag.services;
 
 
-public class BarCodeFault extends Exception {
+public class ReceiverFault_Exception extends Exception {
     private java.lang.String errorMessage;
-    private mstag.services.BarCodeFaultReason reason;
+    private mstag.services.ReceiverFaultReason reason;
     
     
-    public BarCodeFault(java.lang.String errorMessage, mstag.services.BarCodeFaultReason reason) {
+    public ReceiverFault_Exception(java.lang.String errorMessage, mstag.services.ReceiverFaultReason reason) {
         super(errorMessage);
         this.errorMessage = errorMessage;
         this.reason = reason;
@@ -20,7 +20,7 @@ public class BarCodeFault extends Exception {
         return errorMessage;
     }
     
-    public mstag.services.BarCodeFaultReason getReason() {
+    public mstag.services.ReceiverFaultReason getReason() {
         return reason;
     }
 }

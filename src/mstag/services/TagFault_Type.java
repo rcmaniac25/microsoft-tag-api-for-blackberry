@@ -5,13 +5,14 @@
 package mstag.services;
 
 
-public class TagFault extends Exception {
-    private java.lang.String errorMessage;
-    private mstag.services.TagFaultReason reason;
+public class TagFault_Type {
+    protected java.lang.String errorMessage;
+    protected mstag.services.TagFaultReason reason;
     
+    public TagFault_Type() {
+    }
     
-    public TagFault(java.lang.String errorMessage, mstag.services.TagFaultReason reason) {
-        super(errorMessage);
+    public TagFault_Type(java.lang.String errorMessage, mstag.services.TagFaultReason reason) {
         this.errorMessage = errorMessage;
         this.reason = reason;
     }
@@ -20,7 +21,15 @@ public class TagFault extends Exception {
         return errorMessage;
     }
     
+    public void setErrorMessage(java.lang.String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+    
     public mstag.services.TagFaultReason getReason() {
         return reason;
+    }
+    
+    public void setReason(mstag.services.TagFaultReason reason) {
+        this.reason = reason;
     }
 }

@@ -5,12 +5,12 @@
 package mstag.services;
 
 
-public class ReceiverFault extends Exception {
+public class CategoryFault_Exception extends Exception {
     private java.lang.String errorMessage;
-    private mstag.services.ReceiverFaultReason reason;
+    private mstag.services.CategoryFaultReason reason;
     
     
-    public ReceiverFault(java.lang.String errorMessage, mstag.services.ReceiverFaultReason reason) {
+    public CategoryFault_Exception(java.lang.String errorMessage, mstag.services.CategoryFaultReason reason) {
         super(errorMessage);
         this.errorMessage = errorMessage;
         this.reason = reason;
@@ -20,7 +20,7 @@ public class ReceiverFault extends Exception {
         return errorMessage;
     }
     
-    public mstag.services.ReceiverFaultReason getReason() {
+    public mstag.services.CategoryFaultReason getReason() {
         return reason;
     }
 }

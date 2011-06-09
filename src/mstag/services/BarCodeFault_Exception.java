@@ -5,12 +5,12 @@
 package mstag.services;
 
 
-public class UserAuthFault extends Exception {
+public class BarCodeFault_Exception extends Exception {
     private java.lang.String errorMessage;
-    private mstag.services.UserAuthFaultReason reason;
+    private mstag.services.BarCodeFaultReason reason;
     
     
-    public UserAuthFault(java.lang.String errorMessage, mstag.services.UserAuthFaultReason reason) {
+    public BarCodeFault_Exception(java.lang.String errorMessage, mstag.services.BarCodeFaultReason reason) {
         super(errorMessage);
         this.errorMessage = errorMessage;
         this.reason = reason;
@@ -20,7 +20,7 @@ public class UserAuthFault extends Exception {
         return errorMessage;
     }
     
-    public mstag.services.UserAuthFaultReason getReason() {
+    public mstag.services.BarCodeFaultReason getReason() {
         return reason;
     }
 }
