@@ -21,6 +21,14 @@ public class UserCredential
 	}
 	
 	/**
+	 * Initializes a new instance of the UserCredential class.
+	 */
+	public UserCredential(String token)
+	{
+		this.token = token;
+	}
+	
+	/**
 	 * Get the access token, a 64-bit encrypted GUID. This access token is assigned to the user by the Microsoft Tag team.
 	 * @return 64-bit encrypted GUID that represents the access token.
 	 */

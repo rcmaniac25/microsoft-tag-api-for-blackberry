@@ -13,19 +13,18 @@ import java.util.Calendar;
  */
 public abstract class Tag
 {
-	public static final int TAG_STATUS_ACTIVE = 0;
-	public static final int TAG_STATUS_PAUSED = TAG_STATUS_ACTIVE + 1;
-	public static final int TAG_STATUS_DELETE = TAG_STATUS_PAUSED + 1;
-	
-	private String apay, note, title;
-	private Calendar end, start;
-	int status, type;
+	protected String apay, note, title;
+	protected Calendar end, start;
+	protected ImageType type;
+	protected TagStatus status;
 	
 	/**
 	 * Initializes a new instance of the Tag class
 	 */
 	protected Tag()
 	{
+		this.status = TagStatus.ACTIVE;
+		this.start = Calendar.getInstance();
 	}
 	
 	/**
@@ -120,19 +119,37 @@ public abstract class Tag
 	
 	/**
 	 * Gets the Tag status.
-	 * @return Tag status. (One of the <code>TAG_STATUS_*</code> constants)
+	 * @return Tag status.
 	 */
-	public int getStatus()
+	public TagStatus getStatus()
 	{
 		return this.status;
 	}
 	
 	/**
-	 * Gets the Tag image type.
-	 * @return Tag image type. (One of the <code>IMIBPContract.IMG_TYPE_*</code> constants)
+	 * Sets the Tag status.
+	 * @param status Tag status.
 	 */
-	public int getTypes()
+	public void setStatus(TagStatus status)
+	{
+		this.status = status;
+	}
+	
+	/**
+	 * Gets the Tag image type.
+	 * @return Tag image type.
+	 */
+	public ImageType getTypes()
 	{
 		return this.type;
+	}
+	
+	/**
+	 * Sets the Tag image type.
+	 * @param type Tag image type.
+	 */
+	public void setTypes(ImageType type)
+	{
+		this.type = type;
 	}
 }

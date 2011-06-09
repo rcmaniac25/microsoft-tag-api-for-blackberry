@@ -13,19 +13,27 @@ import java.util.Calendar;
  */
 public class Category
 {
-	public static final int STATUS_ACTIVE = 0;
-	public static final int STATUS_PAUSED = STATUS_ACTIVE + 1;
-	
-	private String name;
-	int status;
-	private Calendar end, start;
+	protected String name;
+	protected CategoryStatus status;
+	protected Calendar end, start;
 	
 	/**
 	 * Initializes a new instance of the Category class
 	 */
 	public Category()
 	{
-		this.status = STATUS_ACTIVE;
+		this.status = CategoryStatus.ACTIVE;
+		this.start = Calendar.getInstance();
+	}
+	
+	/**
+	 * Initializes a new instance of the Category class
+	 * @param name Category name.
+	 */
+	public Category(String name)
+	{
+		this();
+		this.name = name;
 	}
 	
 	/**
@@ -48,11 +56,20 @@ public class Category
 	
 	/**
 	 * Gets the availability status of the Category.
-	 * @return Category status. (One of the <code>STATUS_*</code> constants)
+	 * @return Category status.
 	 */
-	public int getStatus()
+	public CategoryStatus getStatus()
 	{
 		return this.status;
+	}
+	
+	/**
+	 * Sets the availability status of the Category.
+	 * @param status Category status.
+	 */
+	public void setStatus(CategoryStatus status)
+	{
+		this.status = status;
 	}
 	
 	/**

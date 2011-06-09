@@ -33,15 +33,23 @@ public class Util
 		if(index == -1)
 		{
 			index = zoneID.indexOf('+');
+			/* If no timezone offset exists, it isn't needed
 			if(index == -1)
 			{
 				buf.append("+00:00");
 			}
+			*/
 		}
 		if(index != -1)
 		{
 			buf.append(zoneID.substring(index + 1));
 		}
 		return buf.toString();
+	}
+	
+	public static Object[] handleTagData(Object[] items, mstag.services.Tag tag)
+	{
+		//TODO
+		return items;
 	}
 }
