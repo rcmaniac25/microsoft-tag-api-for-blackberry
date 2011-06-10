@@ -26,7 +26,7 @@ public class CategoryFaultReason
 	public static final CategoryFaultReason DEFAULT_CATEGORY_DELETE = new CategoryFaultReason(DEFAULT_CATEGORY_DELETE_VALUE);
 	public static final CategoryFaultReason RANGE_SEARCH_NOT_SUPPORTED = new CategoryFaultReason(RANGE_SEARCH_NOT_SUPPORTED_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private CategoryFaultReason(int value)
 	{

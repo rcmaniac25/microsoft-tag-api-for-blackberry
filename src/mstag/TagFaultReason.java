@@ -34,7 +34,7 @@ public class TagFaultReason
 	public static final TagFaultReason PROPERTY_UPDATE_NOT_ALLOWED = new TagFaultReason(PROPERTY_UPDATE_NOT_ALLOWED_VALUE);
 	public static final TagFaultReason RANGE_SEARCH_NOT_SUPPORTED = new TagFaultReason(RANGE_SEARCH_NOT_SUPPORTED_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private TagFaultReason(int value)
 	{

@@ -24,7 +24,7 @@ public final class ImageType
 	public static final ImageType TIFF = new ImageType(TIFF_VALUE);
 	public static final ImageType TAG = new ImageType(TAG_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private ImageType(int value)
 	{

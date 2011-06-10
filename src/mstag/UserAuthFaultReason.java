@@ -22,7 +22,7 @@ public class UserAuthFaultReason
 	public static final UserAuthFaultReason INSUFFICIENT_FEATURE_PERMISSION = new UserAuthFaultReason(INSUFFICIENT_FEATURE_PERMISSION_VALUE);
 	public static final UserAuthFaultReason INVALID_FEATURE_PERMISSION = new UserAuthFaultReason(INVALID_FEATURE_PERMISSION_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private UserAuthFaultReason(int value)
 	{

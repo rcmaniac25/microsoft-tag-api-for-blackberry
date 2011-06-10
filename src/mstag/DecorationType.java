@@ -14,13 +14,28 @@ public final class DecorationType
 	private static final int HCCBRP_DECORATION_FRAMEPLAIN_VALUE = 8;
 	private static final int HCCBRP_DECORATION_TEXT_VALUE = 0x20;
 	
+	/**
+	 * Just the Tag.
+	 */
 	public static final DecorationType HCCBRP_DECORATION_NONE = new DecorationType(HCCBRP_DECORATION_NONE_VALUE);
+	/**
+	 * The Tag along with instructions on how to use the Tag and where to get software for the Tag.
+	 */
 	public static final DecorationType HCCBRP_DECORATION_DOWNLOAD = new DecorationType(HCCBRP_DECORATION_DOWNLOAD_VALUE);
+	/**
+	 * Similar to the {@link HCCBRP_DECORATION_DOWNLOAD} decoration, the Tag itself is returned so it is appropriate for making custom Tags.
+	 */
 	public static final DecorationType HCCBENCODEFLAG_STYLIZED = new DecorationType(HCCBENCODEFLAG_STYLIZED_VALUE);
+	/**
+	 * The Tag and a link for where to download the Tag software.
+	 */
 	public static final DecorationType HCCBRP_DECORATION_FRAMEPLAIN = new DecorationType(HCCBRP_DECORATION_FRAMEPLAIN_VALUE);
+	/**
+	 * Image type is disregarded when this decoration is used, this will return String data that is the hexidecimal representation of the Tag.
+	 */
 	public static final DecorationType HCCBRP_DECORATION_TEXT = new DecorationType(HCCBRP_DECORATION_TEXT_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private DecorationType(int value)
 	{

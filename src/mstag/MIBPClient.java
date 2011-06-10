@@ -16,11 +16,17 @@ import javax.microedition.xml.rpc.Type;
 import javax.xml.namespace.QName;
 
 import javax.xml.rpc.JAXRPCException;
+import javax.xml.rpc.Stub;
 
+import net.rim.device.api.io.Base64InputStream;
+
+import java.io.IOException;
 import java.rmi.RemoteException;
 
-public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, FaultDetailHandler
+public final class MIBPClient implements IMIBPContract, Stub, FaultDetailHandler
 {
+	private static final net.rim.device.api.i18n.ResourceBundle _resources = net.rim.device.api.i18n.ResourceBundle.getBundle(TagResource.BUNDLE_ID, TagResource.BUNDLE_NAME);
+	
 	//Qualified names
 	//-Faults
 	protected static String EMPTY_STR = "";
@@ -66,6 +72,12 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	protected static final QName _qname_category = new QName(NAMESPACE_MSTAG_VER1, "category");
 	protected static final QName _qname_tagName = new QName(NAMESPACE_MSTAG_VER1, "tagName");
 	protected static final QName _qname_tag = new QName(NAMESPACE_MSTAG_VER1, "tag");
+	protected static final QName _qname_imageType = new QName(NAMESPACE_MSTAG_VER1, "imageType");
+	protected static final QName _qname_sizeInInches = new QName(NAMESPACE_MSTAG_VER1, "sizeInInches");
+	protected static final QName _qname_decorationsType = new QName(NAMESPACE_MSTAG_VER1, "decorationsType");
+	protected static final QName _qname_isBlackWhite = new QName(NAMESPACE_MSTAG_VER1, "isBlackWhite");
+	protected static final QName _qname_existingTagName = new QName(NAMESPACE_MSTAG_VER1, "existingTagName");
+	protected static final QName _qname_existingCategoryName = new QName(NAMESPACE_MSTAG_VER1, "existingCategoryName");
 	
 	//-Function Parameters
 	protected static final QName _qname_ActivateCategory = new QName(NAMESPACE_MSTAG_VER1, "ActivateCategory");
@@ -73,6 +85,11 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	protected static final QName _qname_ActivateTag = new QName(NAMESPACE_MSTAG_VER1, "ActivateTag");
 	protected static final QName _qname_CreateTag = new QName(NAMESPACE_MSTAG_VER1, "CreateTag");
 	protected static final QName _qname_DeleteTag = new QName(NAMESPACE_MSTAG_VER1, "DeleteTag");
+	protected static final QName _qname_GetBarcode = new QName(NAMESPACE_MSTAG_VER1, "GetBarcode");
+	protected static final QName _qname_GetTagId = new QName(NAMESPACE_MSTAG_VER1, "GetTagId");
+	protected static final QName _qname_UpdateCategory = new QName(NAMESPACE_MSTAG_VER1, "UpdateCategory");
+	protected static final QName _qname_PauseTag = new QName(NAMESPACE_MSTAG_VER1, "PauseTag");
+	protected static final QName _qname_PauseCategory = new QName(NAMESPACE_MSTAG_VER1, "PauseCategory");
 	
 	//-Function Responses
 	protected static final QName _qname_ActivateCategoryResponse = new QName(NAMESPACE_MSTAG_VER1, "ActivateCategoryResponse");
@@ -80,6 +97,12 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	protected static final QName _qname_ActivateTagResponse = new QName(NAMESPACE_MSTAG_VER1, "ActivateTagResponse");
 	protected static final QName _qname_CreateTagResponse = new QName(NAMESPACE_MSTAG_VER1, "CreateTagResponse");
 	protected static final QName _qname_DeleteTagResponse = new QName(NAMESPACE_MSTAG_VER1, "DeleteTagResponse");
+	protected static final QName _qname_GetBarcodeResponse = new QName(NAMESPACE_MSTAG_VER1, "GetBarcodeResponse");
+	protected static final QName _qname_GetTagIdResponse = new QName(NAMESPACE_MSTAG_VER1, "GetTagIdResponse");
+	protected static final QName _qname_UpdateTagResponse = new QName(NAMESPACE_MSTAG_VER1, "UpdateTagResponse");
+	protected static final QName _qname_UpdateCategoryResponse = new QName(NAMESPACE_MSTAG_VER1, "UpdateCategoryResponse");
+	protected static final QName _qname_PauseTagResponse = new QName(NAMESPACE_MSTAG_VER1, "PauseTagResponse");
+	protected static final QName _qname_PauseCategoryResponse = new QName(NAMESPACE_MSTAG_VER1, "PauseCategoryResponse");
 	
 	//-Function Results
 	protected static final QName _qname_ActivateCategoryResult = new QName(NAMESPACE_MSTAG_VER1, "ActivateCategoryResult");
@@ -87,6 +110,13 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	protected static final QName _qname_ActivateTagResult = new QName(NAMESPACE_MSTAG_VER1, "ActivateTagResult");
 	protected static final QName _qname_CreateTagResult = new QName(NAMESPACE_MSTAG_VER1, "CreateTagResult");
 	protected static final QName _qname_DeleteTagResult = new QName(NAMESPACE_MSTAG_VER1, "DeleteTagResult");
+	protected static final QName _qname_GetBarcodeResult = new QName(NAMESPACE_MSTAG_VER1, "GetBarcodeResult");
+	protected static final QName _qname_GetTagIdResult = new QName(NAMESPACE_MSTAG_VER1, "GetTagIdResult");
+	protected static final QName _qname_UpdateTagResult = new QName(NAMESPACE_MSTAG_VER1, "UpdateTagResult");
+	protected static final QName _qname_UpdateTag = new QName(NAMESPACE_MSTAG_VER1, "UpdateTag");
+	protected static final QName _qname_UpdateCategoryResult = new QName(NAMESPACE_MSTAG_VER1, "UpdateCategoryResult");
+	protected static final QName _qname_PauseTagResult = new QName(NAMESPACE_MSTAG_VER1, "PauseTagResult");
+	protected static final QName _qname_PauseCategoryResult = new QName(NAMESPACE_MSTAG_VER1, "PauseCategoryResult");
 	
 	//Types
 	protected static final Element _type_ReceiverFaultFault;
@@ -102,6 +132,12 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	protected static final Element _type_ActivateTag;
 	protected static final Element _type_CreateTag;
 	protected static final Element _type_DeleteTag;
+	protected static final Element _type_GetBarcode;
+	protected static final Element _type_GetTagId;
+	protected static final Element _type_UpdateTag;
+	protected static final Element _type_UpdateCategory;
+	protected static final Element _type_PauseTag;
+	protected static final Element _type_PauseCategory;
 	
 	//Function responses
 	protected static final Element _type_ActivateCategoryResponse;
@@ -109,6 +145,12 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	protected static final Element _type_ActivateTagResponse;
 	protected static final Element _type_CreateTagResponse;
 	protected static final Element _type_DeleteTagResponse;
+	protected static final Element _type_GetBarcodeResponse;
+	protected static final Element _type_GetTagIdResponse;
+	protected static final Element _type_UpdateTagResponse;
+	protected static final Element _type_UpdateCategoryResponse;
+	protected static final Element _type_PauseTagResponse;
+	protected static final Element _type_PauseCategoryResponse;
 	
 	static
 	{
@@ -143,6 +185,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		compType = new ComplexType();
 		compType.elements = new Element[]{_type_userCredential, _type_categoryName};
 		_type_ActivateCategory = new Element(_qname_ActivateCategory, compType);
+		_type_PauseCategory = new Element(_qname_PauseCategory, compType);
 		
 		compType = new ComplexType();
 		compType.elements = new Element[]{new Element(_qname_Name, Type.STRING, 1, 1, true), _type_UTCStartDate, _type_UTCEndDate, 
@@ -156,12 +199,29 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		compType = new ComplexType();
 		compType.elements = new Element[]{_type_userCredential, _type_categoryName, _type_tagName};
 		_type_ActivateTag = new Element(_qname_ActivateTag, compType);
-		
+		_type_PauseTag = new Element(_qname_PauseTag, compType);
+		_type_GetTagId = new Element(_qname_GetTagId, compType);
 		_type_DeleteTag = new Element(_qname_DeleteTag, compType);
 		
 		compType = new ComplexType();
 		compType.elements = new Element[]{_type_userCredential, _type_categoryName, _type_tag};
 		_type_CreateTag = new Element(_qname_CreateTag, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{_type_userCredential, _type_categoryName, _type_tagName, new Element(_qname_imageType, Type.STRING, 0, -1, false),
+				new Element(_qname_sizeInInches, Type.FLOAT, 0, 1, false), new Element(_qname_decorationsType, Type.STRING, 0, 1, false),
+				new Element(_qname_isBlackWhite, Type.BOOLEAN, 0, 1, false)
+		};
+		_type_GetBarcode = new Element(_qname_GetBarcode, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{_type_userCredential, _type_categoryName, 
+				new Element(_qname_existingTagName, Type.STRING, 0, 1, true), _type_tag};
+		_type_UpdateTag = new Element(_qname_UpdateTag, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{_type_userCredential, new Element(_qname_existingCategoryName, Type.STRING, 0, 1, true), _type_category};
+		_type_UpdateCategory = new Element(_qname_UpdateCategory, compType);
 		
 		//Function responses
 		compType = new ComplexType();
@@ -183,6 +243,30 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		compType = new ComplexType();
 		compType.elements = new Element[]{new Element(_qname_DeleteTagResult, Type.BOOLEAN, 0, 1, false)};
 		_type_DeleteTagResponse = new Element(_qname_DeleteTagResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_GetBarcodeResult, Type.STRING, 0, 1, true)};
+		_type_GetBarcodeResponse = new Element(_qname_GetBarcodeResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_GetTagIdResult, Type.STRING, 0, 1, true)};
+		_type_GetTagIdResponse = new Element(_qname_GetTagIdResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_UpdateTagResult, Type.BOOLEAN, 0, 1, false)};
+		_type_UpdateTagResponse = new Element(_qname_UpdateTagResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_UpdateCategoryResult, Type.BOOLEAN, 0, 1, false)};
+		_type_UpdateCategoryResponse = new Element(_qname_UpdateCategoryResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_PauseTagResult, Type.BOOLEAN, 0, 1, false)};
+		_type_PauseTagResponse = new Element(_qname_PauseTagResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_PauseCategoryResult, Type.BOOLEAN, 0, 1, false)};
+		_type_PauseCategoryResponse = new Element(_qname_PauseCategoryResponse, compType);
 	}
 	
 	//Variables
@@ -253,7 +337,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		{
 			return new java.lang.Boolean(false);
 		}
-		throw new JAXRPCException("Stub does not recognize property: "+name);
+		throw new JAXRPCException(MIBPClient._resources.getString(TagResource.MIBP_CLIENT_UNK_PROPERTY)+name);
 	}
 	
 	public void _setProperty(String name, Object value)
@@ -312,6 +396,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		}
 		catch (JAXRPCException e)
 		{
+			//Handle exceptions
 			Throwable cause = e.getLinkedCause();
 			if (cause instanceof RemoteException)
 			{
@@ -386,8 +471,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean createCategory(UserCredential userCredential, Category category) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		Object[] catArgs = new Object[]{category.name, Util.toSOAPString(category.start), Util.toSOAPString(category.end), category.status.toString()};
-		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{catArgs}, _qname__CreateCategory, _type_CreateCategory, _type_CreateCategoryResponse, "CreateCategory"))[0]).booleanValue();
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{Util.handleCatagoryData(category)}, _qname__CreateCategory, _type_CreateCategory, _type_CreateCategoryResponse, "CreateCategory"))[0]).booleanValue();
 	}
 	
 	public boolean createTag(String categoryName, Tag tag) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -419,8 +503,16 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	public byte[] getBarcode(UserCredential userCredential, String categoryName, String tagName, ImageType imageType, float sizeInInches, DecorationType decorationsType, 
 			boolean isBlackWhite) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Object[] args = new Object[]{categoryName, tagName, new Object[]{imageType.toString()}, new Float(sizeInInches), decorationsType.toString(), new Boolean(isBlackWhite)};
+		byte[] result = null;
+		try
+		{
+			result = Base64InputStream.decode((String)((Object[])invokeMethod(userCredential, args, _qname__GetBarcode, _type_GetBarcode, _type_GetBarcodeResponse, "GetBarcode"))[0]);
+		}
+		catch (IOException e)
+		{
+		}
+		return result;
 	}
 	
 	public String getTagId(String categoryName, String tagName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -430,8 +522,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public String getTagId(UserCredential userCredential, String categoryName, String tagName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return (String)((Object[])invokeMethod(userCredential, new Object[]{categoryName,tagName}, _qname__GetTagId, _type_GetTagId, _type_GetTagIdResponse, "GetTagId"))[0];
 	}
 	
 	public boolean pauseCategory(String categoryName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -441,8 +532,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean pauseCategory(UserCredential userCredential, String categoryName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{categoryName}, _qname__PauseCategory, _type_PauseCategory, _type_PauseCategoryResponse, "PauseCategory"))[0]).booleanValue();
 	}
 	
 	public boolean pauseTag(String categoryName, String tagName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -452,8 +542,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean pauseTag(UserCredential userCredential, String categoryName, String tagName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{categoryName, tagName}, _qname__PauseTag, _type_PauseTag, _type_PauseTagResponse, "PauseTag"))[0]).booleanValue();
 	}
 	
 	public boolean updateCategory(String existingCategoryName, Category category) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -463,8 +552,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean updateCategory(UserCredential userCredential, String existingCategoryName, Category category) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{existingCategoryName, Util.handleCatagoryData(category)}, _qname__UpdateCategory, _type_UpdateCategory, _type_UpdateCategoryResponse, "UpdateCategory"))[0]).booleanValue();
 	}
 	
 	public boolean updateTag(String categoryName, String existingTagName, Tag tag) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -474,7 +562,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean updateTag(UserCredential userCredential, String categoryName, String existingTagName, Tag tag) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return false;
+		//TODO: Handle different tags
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{categoryName, existingTagName, Util.handleTagData(tag)}, _qname__UpdateTag, _type_UpdateTag, _type_UpdateTagResponse, "UpdateTag"))[0]).booleanValue();
 	}
 }

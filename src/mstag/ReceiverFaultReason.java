@@ -16,7 +16,7 @@ public class ReceiverFaultReason
 	public static final ReceiverFaultReason INTERNAL_ERROR = new ReceiverFaultReason(INTERNAL_ERROR_VALUE);
 	public static final ReceiverFaultReason RULE_FAILURE = new ReceiverFaultReason(RULE_FAILURE_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private ReceiverFaultReason(int value)
 	{

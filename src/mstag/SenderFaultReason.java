@@ -22,7 +22,7 @@ public class SenderFaultReason
 	public static final SenderFaultReason VALUE_OUT_OF_RANGE = new SenderFaultReason(VALUE_OUT_OF_RANGE_VALUE);
 	public static final SenderFaultReason OVERFLOW = new SenderFaultReason(OVERFLOW_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private SenderFaultReason(int value)
 	{

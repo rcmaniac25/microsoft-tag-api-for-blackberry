@@ -14,7 +14,7 @@ public final class CategoryStatus
 	public static final CategoryStatus ACTIVE = new CategoryStatus(ACTIVE_VALUE);
 	public static final CategoryStatus PAUSED = new CategoryStatus(PAUSED_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private CategoryStatus(int value)
 	{

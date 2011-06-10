@@ -16,7 +16,7 @@ public final class TagStatus
 	public static final TagStatus PAUSED = new TagStatus(PAUSED_VALUE);
 	public static final TagStatus DELETE = new TagStatus(DELETE_VALUE);
 	
-	protected int value;
+	private int value;
 	
 	private TagStatus(int value)
 	{

@@ -49,6 +49,10 @@ public class Util
 	
 	public static Object[] handleTagData(Tag tag)
 	{
+		if(tag == null)
+		{
+			return null;
+		}
 		Object[] tagObject = new Object[7 + tagSpecificSize(tag)];
 		tagObject[0] = tag.title;
 		tagObject[1] = tag.note;
@@ -70,5 +74,14 @@ public class Util
 	private static void tagSpecificObjects(Tag tag, Object[] tagObject)
 	{
 		//TODO
+	}
+	
+	public static Object[] handleCatagoryData(Category cat)
+	{
+		if(cat == null)
+		{
+			return null;
+		}
+		return new Object[]{cat.name, Util.toSOAPString(cat.start), Util.toSOAPString(cat.end), cat.status.toString()};
 	}
 }
