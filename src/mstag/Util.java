@@ -47,9 +47,28 @@ public class Util
 		return buf.toString();
 	}
 	
-	public static Object[] handleTagData(Object[] items, mstag.services.Tag tag)
+	public static Object[] handleTagData(Tag tag)
+	{
+		Object[] tagObject = new Object[7 + tagSpecificSize(tag)];
+		tagObject[0] = tag.title;
+		tagObject[1] = tag.note;
+		tagObject[2] = tag.status.toString();
+		tagObject[3] = tag.type.toString();
+		tagObject[4] = Util.toSOAPString(tag.start);
+		tagObject[5] = Util.toSOAPString(tag.end);
+		tagObject[6] = tag.apay;
+		tagSpecificObjects(tag, tagObject);
+		return tagObject;
+	}
+	
+	private static int tagSpecificSize(Tag tag)
 	{
 		//TODO
-		return items;
+		return 0;
+	}
+	
+	private static void tagSpecificObjects(Tag tag, Object[] tagObject)
+	{
+		//TODO
 	}
 }

@@ -23,51 +23,70 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 {
 	//Qualified names
 	//-Faults
-	protected static final QName _qname_BarCodeFaultFault = new QName("", "BarCodeFaultFault");
-	protected static final QName _qname_CategoryFaultFault = new QName("", "CategoryFaultFault");
-	protected static final QName _qname_ReceiverFaultFault = new QName("", "ReceiverFaultFault");
-	protected static final QName _qname_SenderFaultFault = new QName("", "SenderFaultFault");
-	protected static final QName _qname_TagFaultFault = new QName("", "TagFaultFault");
-	protected static final QName _qname_UserAuthFaultFault = new QName("", "UserAuthFaultFault");
+	protected static String EMPTY_STR = "";
+	protected static final QName _qname_BarCodeFaultFault = new QName(EMPTY_STR, "BarCodeFaultFault");
+	protected static final QName _qname_CategoryFaultFault = new QName(EMPTY_STR, "CategoryFaultFault");
+	protected static final QName _qname_ReceiverFaultFault = new QName(EMPTY_STR, "ReceiverFaultFault");
+	protected static final QName _qname_SenderFaultFault = new QName(EMPTY_STR, "SenderFaultFault");
+	protected static final QName _qname_TagFaultFault = new QName(EMPTY_STR, "TagFaultFault");
+	protected static final QName _qname_UserAuthFaultFault = new QName(EMPTY_STR, "UserAuthFaultFault");
 	
 	//-Functions
-	protected static final QName _qname__ActivateCategory = new QName("http://tempuri.org/", "ActivateCategory");
-	protected static final QName _qname__ActivateTag = new QName("http://tempuri.org/", "ActivateTag");
-	protected static final QName _qname__CreateCategory = new QName("http://tempuri.org/", "CreateCategory");
-	protected static final QName _qname__CreateTag = new QName("http://tempuri.org/", "CreateTag");
-	protected static final QName _qname__DeleteTag = new QName("http://tempuri.org/", "DeleteTag");
-	protected static final QName _qname__GetBarcode = new QName("http://tempuri.org/", "GetBarcode");
-	protected static final QName _qname__GetTagId = new QName("http://tempuri.org/", "GetTagId");
-	protected static final QName _qname__PauseCategory = new QName("http://tempuri.org/", "PauseCategory");
-	protected static final QName _qname__PauseTag = new QName("http://tempuri.org/", "PauseTag");
-	protected static final QName _qname__UpdateCategory = new QName("http://tempuri.org/", "UpdateCategory");
-	protected static final QName _qname__UpdateTag = new QName("http://tempuri.org/", "UpdateTag");
+	protected static String NAMESPACE_TEMPURI = "http://tempuri.org/";
+	protected static final QName _qname__ActivateCategory = new QName(NAMESPACE_TEMPURI, "ActivateCategory");
+	protected static final QName _qname__ActivateTag = new QName(NAMESPACE_TEMPURI, "ActivateTag");
+	protected static final QName _qname__CreateCategory = new QName(NAMESPACE_TEMPURI, "CreateCategory");
+	protected static final QName _qname__CreateTag = new QName(NAMESPACE_TEMPURI, "CreateTag");
+	protected static final QName _qname__DeleteTag = new QName(NAMESPACE_TEMPURI, "DeleteTag");
+	protected static final QName _qname__GetBarcode = new QName(NAMESPACE_TEMPURI, "GetBarcode");
+	protected static final QName _qname__GetTagId = new QName(NAMESPACE_TEMPURI, "GetTagId");
+	protected static final QName _qname__PauseCategory = new QName(NAMESPACE_TEMPURI, "PauseCategory");
+	protected static final QName _qname__PauseTag = new QName(NAMESPACE_TEMPURI, "PauseTag");
+	protected static final QName _qname__UpdateCategory = new QName(NAMESPACE_TEMPURI, "UpdateCategory");
+	protected static final QName _qname__UpdateTag = new QName(NAMESPACE_TEMPURI, "UpdateTag");
 	
 	//-Fields
-	protected static final QName _qname_ErrorMessage = new QName("http://www.ws.tag.microsoft.com/ver1", "ErrorMessage");
-	protected static final QName _qname_Reason = new QName("http://www.ws.tag.microsoft.com/ver1", "Reason");
-	protected static final QName _qname_AccessToken = new QName("http://www.ws.tag.microsoft.com/ver1", "AccessToken");
-	protected static final QName _qname_UTCEndDate = new QName("http://www.ws.tag.microsoft.com/ver1", "UTCEndDate");
-	protected static final QName _qname_UTCStartDate = new QName("http://www.ws.tag.microsoft.com/ver1", "UTCStartDate");
-	protected static final QName _qname_Name = new QName("http://www.ws.tag.microsoft.com/ver1", "Name");
-	protected static final QName _qname_CategoryStatus = new QName("http://www.ws.tag.microsoft.com/ver1", "CategoryStatus");
+	protected static String NAMESPACE_MSTAG_VER1 = "http://www.ws.tag.microsoft.com/ver1";
+	protected static final QName _qname_ErrorMessage = new QName(NAMESPACE_MSTAG_VER1, "ErrorMessage");
+	protected static final QName _qname_Reason = new QName(NAMESPACE_MSTAG_VER1, "Reason");
+	protected static final QName _qname_AccessToken = new QName(NAMESPACE_MSTAG_VER1, "AccessToken");
+	protected static final QName _qname_UTCEndDate = new QName(NAMESPACE_MSTAG_VER1, "UTCEndDate");
+	protected static final QName _qname_UTCStartDate = new QName(NAMESPACE_MSTAG_VER1, "UTCStartDate");
+	protected static final QName _qname_Name = new QName(NAMESPACE_MSTAG_VER1, "Name");
+	protected static final QName _qname_CategoryStatus = new QName(NAMESPACE_MSTAG_VER1, "CategoryStatus");
+	protected static final QName _qname_Title = new QName(NAMESPACE_MSTAG_VER1, "Title");
+	protected static final QName _qname_InteractionNote = new QName(NAMESPACE_MSTAG_VER1, "InteractionNote");
+	protected static final QName _qname_Status = new QName(NAMESPACE_MSTAG_VER1, "Status");
+	protected static final QName _qname_Types = new QName(NAMESPACE_MSTAG_VER1, "Types");
+	protected static final QName _qname_AssociatedPayload = new QName(NAMESPACE_MSTAG_VER1, "AssociatedPayload");
 	
 	//-Parameters
-	protected static final QName _qname_categoryName = new QName("http://www.ws.tag.microsoft.com/ver1", "categoryName");
-	protected static final QName _qname_userCredential = new QName("http://www.ws.tag.microsoft.com/ver1", "userCredential");
-	protected static final QName _qname_category = new QName("http://www.ws.tag.microsoft.com/ver1", "category");
+	protected static final QName _qname_categoryName = new QName(NAMESPACE_MSTAG_VER1, "categoryName");
+	protected static final QName _qname_userCredential = new QName(NAMESPACE_MSTAG_VER1, "userCredential");
+	protected static final QName _qname_category = new QName(NAMESPACE_MSTAG_VER1, "category");
+	protected static final QName _qname_tagName = new QName(NAMESPACE_MSTAG_VER1, "tagName");
+	protected static final QName _qname_tag = new QName(NAMESPACE_MSTAG_VER1, "tag");
 	
 	//-Function Parameters
-	protected static final QName _qname_ActivateCategory = new QName("http://www.ws.tag.microsoft.com/ver1", "ActivateCategory");
-	protected static final QName _qname_CreateCategory = new QName("http://www.ws.tag.microsoft.com/ver1", "CreateCategory");
+	protected static final QName _qname_ActivateCategory = new QName(NAMESPACE_MSTAG_VER1, "ActivateCategory");
+	protected static final QName _qname_CreateCategory = new QName(NAMESPACE_MSTAG_VER1, "CreateCategory");
+	protected static final QName _qname_ActivateTag = new QName(NAMESPACE_MSTAG_VER1, "ActivateTag");
+	protected static final QName _qname_CreateTag = new QName(NAMESPACE_MSTAG_VER1, "CreateTag");
+	protected static final QName _qname_DeleteTag = new QName(NAMESPACE_MSTAG_VER1, "DeleteTag");
 	
 	//-Function Responses
-	protected static final QName _qname_ActivateCategoryResponse = new QName("http://www.ws.tag.microsoft.com/ver1", "ActivateCategoryResponse");
-	protected static final QName _qname_CreateCategoryResponse = new QName("http://www.ws.tag.microsoft.com/ver1", "CreateCategoryResponse");
+	protected static final QName _qname_ActivateCategoryResponse = new QName(NAMESPACE_MSTAG_VER1, "ActivateCategoryResponse");
+	protected static final QName _qname_CreateCategoryResponse = new QName(NAMESPACE_MSTAG_VER1, "CreateCategoryResponse");
+	protected static final QName _qname_ActivateTagResponse = new QName(NAMESPACE_MSTAG_VER1, "ActivateTagResponse");
+	protected static final QName _qname_CreateTagResponse = new QName(NAMESPACE_MSTAG_VER1, "CreateTagResponse");
+	protected static final QName _qname_DeleteTagResponse = new QName(NAMESPACE_MSTAG_VER1, "DeleteTagResponse");
 	
 	//-Function Results
-	protected static final QName _qname_ActivateCategoryResult = new QName("http://www.ws.tag.microsoft.com/ver1", "ActivateCategoryResult");
-	protected static final QName _qname_CreateCategoryResult = new QName("http://www.ws.tag.microsoft.com/ver1", "CreateCategoryResult");
+	protected static final QName _qname_ActivateCategoryResult = new QName(NAMESPACE_MSTAG_VER1, "ActivateCategoryResult");
+	protected static final QName _qname_CreateCategoryResult = new QName(NAMESPACE_MSTAG_VER1, "CreateCategoryResult");
+	protected static final QName _qname_ActivateTagResult = new QName(NAMESPACE_MSTAG_VER1, "ActivateTagResult");
+	protected static final QName _qname_CreateTagResult = new QName(NAMESPACE_MSTAG_VER1, "CreateTagResult");
+	protected static final QName _qname_DeleteTagResult = new QName(NAMESPACE_MSTAG_VER1, "DeleteTagResult");
 	
 	//Types
 	protected static final Element _type_ReceiverFaultFault;
@@ -80,10 +99,16 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	//Function parameters
 	protected static final Element _type_ActivateCategory;
 	protected static final Element _type_CreateCategory;
+	protected static final Element _type_ActivateTag;
+	protected static final Element _type_CreateTag;
+	protected static final Element _type_DeleteTag;
 	
 	//Function responses
 	protected static final Element _type_ActivateCategoryResponse;
 	protected static final Element _type_CreateCategoryResponse;
+	protected static final Element _type_ActivateTagResponse;
+	protected static final Element _type_CreateTagResponse;
+	protected static final Element _type_DeleteTagResponse;
 	
 	static
 	{
@@ -97,17 +122,27 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		_type_TagFaultFault = new Element(_qname_TagFaultFault, compType);
 		_type_BarCodeFaultFault = new Element(_qname_BarCodeFaultFault, compType);
 		
-		//Function arguments
+		//Function parameters
 		compType = new ComplexType();
 		compType.elements = new Element[]{new Element(_qname_AccessToken, Type.STRING, 1, 1, true)};
 		Element _type_userCredential = new Element(_qname_userCredential, compType, 0, 1, true);
-		
-		compType = new ComplexType();
-		compType.elements = new Element[]{_type_userCredential, new Element(_qname_categoryName, Type.STRING, 0, 1, true)};
-		_type_ActivateCategory = new Element(_qname_ActivateCategory, compType);
-		
+		Element _type_categoryName = new Element(_qname_categoryName, Type.STRING, 0, 1, true);
+		Element _type_tagName = new Element(_qname_tagName, Type.STRING, 0, 1, true);
 		Element _type_UTCStartDate = new Element(_qname_UTCStartDate, Type.STRING);
 		Element _type_UTCEndDate = new Element(_qname_UTCEndDate, Type.STRING, 0, 1, true);
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_Title, Type.STRING, 1, 1, true),
+				new Element(_qname_InteractionNote, Type.STRING, 1, 1, true),
+				new Element(_qname_Status, Type.STRING),
+				new Element(_qname_Types, Type.STRING, 1, -1, false),
+				_type_UTCStartDate,_type_UTCEndDate,
+				new Element(_qname_AssociatedPayload, Type.STRING, 0, 1, true)
+		};
+		Element _type_tag = new Element(_qname_tag, compType, 0, 1, true);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{_type_userCredential, _type_categoryName};
+		_type_ActivateCategory = new Element(_qname_ActivateCategory, compType);
 		
 		compType = new ComplexType();
 		compType.elements = new Element[]{new Element(_qname_Name, Type.STRING, 1, 1, true), _type_UTCStartDate, _type_UTCEndDate, 
@@ -118,6 +153,16 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		compType.elements = new Element[]{_type_userCredential, _type_category};
 		_type_CreateCategory = new Element(_qname_CreateCategory, compType);
 		
+		compType = new ComplexType();
+		compType.elements = new Element[]{_type_userCredential, _type_categoryName, _type_tagName};
+		_type_ActivateTag = new Element(_qname_ActivateTag, compType);
+		
+		_type_DeleteTag = new Element(_qname_DeleteTag, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{_type_userCredential, _type_categoryName, _type_tag};
+		_type_CreateTag = new Element(_qname_CreateTag, compType);
+		
 		//Function responses
 		compType = new ComplexType();
 		compType.elements = new Element[]{new Element(_qname_ActivateCategoryResult, Type.BOOLEAN, 0, 1, false)};
@@ -126,6 +171,18 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 		compType = new ComplexType();
 		compType.elements = new Element[]{new Element(_qname_CreateCategoryResult, Type.BOOLEAN, 0, 1, false)};
 		_type_CreateCategoryResponse = new Element(_qname_CreateCategoryResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_ActivateTagResult, Type.BOOLEAN, 0, 1, false)};
+		_type_ActivateTagResponse = new Element(_qname_ActivateTagResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_CreateTagResult, Type.BOOLEAN, 0, 1, false)};
+		_type_CreateTagResponse = new Element(_qname_CreateTagResponse, compType);
+		
+		compType = new ComplexType();
+		compType.elements = new Element[]{new Element(_qname_DeleteTagResult, Type.BOOLEAN, 0, 1, false)};
+		_type_DeleteTagResponse = new Element(_qname_DeleteTagResponse, compType);
 	}
 	
 	//Variables
@@ -152,27 +209,27 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	{
 		String local = name.getLocalPart();
 		String URI = name.getNamespaceURI();
-		if ("BarCodeFaultFault".equals(local) && "".equals(URI))
+		if ("BarCodeFault".equals(local) && NAMESPACE_MSTAG_VER1.equals(URI))
 		{
 			return _type_BarCodeFaultFault;
 		}
-		if ("CategoryFaultFault".equals(local) && "".equals(URI))
+		if ("CategoryFault".equals(local) && NAMESPACE_MSTAG_VER1.equals(URI))
 		{
 			return _type_CategoryFaultFault;
 		}
-		if ("ReceiverFaultFault".equals(local) && "".equals(URI))
+		if ("ReceiverFault".equals(local) && NAMESPACE_MSTAG_VER1.equals(URI))
 		{
 			return _type_ReceiverFaultFault;
 		}
-		if ("SenderFaultFault".equals(local) && "".equals(URI))
+		if ("SenderFault".equals(local) && NAMESPACE_MSTAG_VER1.equals(URI))
 		{
 			return _type_SenderFaultFault;
 		}
-		if ("TagFaultFault".equals(local) && "".equals(URI))
+		if ("TagFault".equals(local) && NAMESPACE_MSTAG_VER1.equals(URI))
 		{
 			return _type_TagFaultFault;
 		}
-		if ("UserAuthFaultFault".equals(local) && "".equals(URI))
+		if ("UserAuthFault".equals(local) && NAMESPACE_MSTAG_VER1.equals(URI))
 		{
 			return _type_UserAuthFaultFault;
 		}
@@ -274,23 +331,23 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 				String errorMsg = (String)detail[0];
 				String reasonStr = (String)detail[1];
 				
-				if ("ReceiverFaultFault".equals(fdeNameLocal) && "".equals(fdeNameURI))
+				if ("ReceiverFaultFault".equals(fdeNameLocal) && NAMESPACE_MSTAG_VER1.equals(fdeNameURI))
 				{
 					throw new ReceiverFault(errorMsg, ReceiverFaultReason.fromValue(reasonStr));
 				}
-				if ("UserAuthFaultFault".equals(fdeNameLocal) && "".equals(fdeNameURI))
+				if ("UserAuthFaultFault".equals(fdeNameLocal) && NAMESPACE_MSTAG_VER1.equals(fdeNameURI))
 				{
 					throw new UserAuthFault(errorMsg, UserAuthFaultReason.fromValue(reasonStr));
 				}
-				if ("CategoryFaultFault".equals(fdeNameLocal) && "".equals(fdeNameURI))
+				if ("CategoryFaultFault".equals(fdeNameLocal) && NAMESPACE_MSTAG_VER1.equals(fdeNameURI))
 				{
 					throw new CategoryFault(errorMsg, CategoryFaultReason.fromValue(reasonStr));
 				}
-				if ("TagFaultFault".equals(fdeNameLocal) && "".equals(fdeNameURI))
+				if ("TagFaultFault".equals(fdeNameLocal) && NAMESPACE_MSTAG_VER1.equals(fdeNameURI))
 				{
 					throw new TagFault(errorMsg, TagFaultReason.fromValue(reasonStr));
 				}
-				if ("SenderFaultFault".equals(fdeNameLocal) && "".equals(fdeNameURI))
+				if ("SenderFaultFault".equals(fdeNameLocal) && NAMESPACE_MSTAG_VER1.equals(fdeNameURI))
 				{
 					throw new SenderFault(errorMsg, SenderFaultReason.fromValue(reasonStr));
 				}
@@ -319,8 +376,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean activateTag(UserCredential userCredential, String categoryName, String tagName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{categoryName, tagName}, _qname__ActivateTag, _type_ActivateTag, _type_ActivateTagResponse, "ActivateTag"))[0]).booleanValue();
 	}
 	
 	public boolean createCategory(Category category) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -341,8 +397,8 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean createTag(UserCredential userCredential, String categoryName, Tag tag) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return false;
+		//TODO: Handle different tags
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{categoryName, Util.handleTagData(tag)}, _qname__CreateTag, _type_CreateTag, _type_CreateTagResponse, "CreateTag"))[0]).booleanValue();
 	}
 	
 	public boolean deleteTag(String categoryName, String tagName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
@@ -352,8 +408,7 @@ public final class MIBPClient implements IMIBPContract, javax.xml.rpc.Stub, Faul
 	
 	public boolean deleteTag(UserCredential userCredential, String categoryName, String tagName) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return ((Boolean)((Object[])invokeMethod(userCredential, new Object[]{categoryName, tagName}, _qname__DeleteTag, _type_DeleteTag, _type_DeleteTagResponse, "DeleteTag"))[0]).booleanValue();
 	}
 	
 	public byte[] getBarcode(String categoryName, String tagName, ImageType imageType, float sizeInInches, DecorationType decorationsType, boolean isBlackWhite) throws RemoteException, ReceiverFault, UserAuthFault, CategoryFault, TagFault, SenderFault

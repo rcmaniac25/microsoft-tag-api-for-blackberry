@@ -30,4 +30,26 @@ public final class ImageType
 	{
 		this.value = value;
 	}
+	
+	public String toString()
+	{
+		switch(this.value)
+		{
+			case PDF_VALUE:
+				return "pdf";
+			case WMF_VALUE:
+				return "wmf";
+			case JPEG_VALUE:
+				return "jpeg";
+			case PNG_VALUE:
+				return "png";
+			case GIF_VALUE:
+				return "gif";
+			case TIFF_VALUE:
+				return "tiff";
+			case TAG_VALUE:
+				return "tag";
+		}
+		return null;
+	}
 }

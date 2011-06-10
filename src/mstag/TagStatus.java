@@ -22,4 +22,18 @@ public final class TagStatus
 	{
 		this.value = value;
 	}
+	
+	public String toString()
+	{
+		switch(this.value)
+		{
+			case ACTIVE_VALUE:
+				return "Active";
+			case PAUSED_VALUE:
+				return "Paused";
+			case DELETE_VALUE:
+				return "Delete";
+		}
+		return null;
+	}
 }

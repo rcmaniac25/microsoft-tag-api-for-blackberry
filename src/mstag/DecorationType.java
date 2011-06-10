@@ -26,4 +26,22 @@ public final class DecorationType
 	{
 		this.value = value;
 	}
+	
+	public String toString()
+	{
+		switch(this.value)
+		{
+			case HCCBRP_DECORATION_NONE_VALUE:
+				return "HCCBRP_DECORATION_NONE";
+			case HCCBRP_DECORATION_DOWNLOAD_VALUE:
+				return "HCCBRP_DECORATION_DOWNLOAD";
+			case HCCBENCODEFLAG_STYLIZED_VALUE:
+				return "HCCBENCODEFLAG_STYLIZED";
+			case HCCBRP_DECORATION_FRAMEPLAIN_VALUE:
+				return "HCCBRP_DECORATION_FRAMEPLAIN";
+			case HCCBRP_DECORATION_TEXT_VALUE:
+				return "HCCBRP_DECORATION_TEXT";
+		}
+		return null;
+	}
 }
